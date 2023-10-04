@@ -33,8 +33,7 @@ class CheckoutController extends Controller
 
     // order_store
     function order_store(Request $request) {
-        // print_r($request->all());
-        // die();
+        
         $request->validate([
             'name' => 'required',
             'email' => 'required',
@@ -97,7 +96,7 @@ class CheckoutController extends Controller
                 // card delete
                 Cookie::queue(Cookie::forget('shopping_cart'));
 
-                Mail::to($request->email)->send(new InvoiceMail($order_id));
+                // Mail::to($request->email)->send(new InvoiceMail($order_id));
 
                 // return redirect()->route('order.success')->withSuccess("Order has been placed successfully")->withOrder($order_id);
                 return redirect()->route('order.success')->with([
@@ -105,6 +104,10 @@ class CheckoutController extends Controller
                 ]);
         
             } else if($request->payment_method == 2) {
+                $request->validate([
+                    'tran_number' => 'required',
+                    'tran_id' => 'required',
+                ]);
                 if(Coupon::where('coupon_name', $request->coupon)->exists()) {
                     $coupon = Coupon::where('coupon_name', $request->coupon)->first()->get();
                     $coupon_price = $coupon->first()->coupon_amount;
@@ -157,7 +160,7 @@ class CheckoutController extends Controller
                 }
                 Cookie::queue(Cookie::forget('shopping_cart'));
 
-                Mail::to($request->email)->send(new InvoiceMail($order_id));
+                // Mail::to($request->email)->send(new InvoiceMail($order_id));
 
                 // return redirect()->route('order.success')->withSuccess("Order has been placed successfully")->withOrder($order_id);
                 return redirect()->route('order.success')->with([
@@ -225,7 +228,7 @@ class CheckoutController extends Controller
                 // Cookie::queue(Cookie::forget('shopping_cart'));
                 Cookie::queue(Cookie::forget('shopping_cart'));
 
-                Mail::to($request->email)->send(new InvoiceMail($order_id));
+                // Mail::to($request->email)->send(new InvoiceMail($order_id));
 
                 return redirect()->route('order.success')->withSuccess("Order has been placed successfully")->withOrder($order_id);
         
@@ -286,7 +289,7 @@ class CheckoutController extends Controller
                 }
                 Cookie::queue(Cookie::forget('shopping_cart'));
 
-                Mail::to($request->email)->send(new InvoiceMail($order_id));
+                // Mail::to($request->email)->send(new InvoiceMail($order_id));
 
                 return redirect()->route('order.success')->with([
                     'order_id'=>$order_id,
