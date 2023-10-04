@@ -159,9 +159,7 @@ class CheckoutController extends Controller
                     Inventory::where('product_id', $itemdata['item_id'])->where('color_id', $itemdata['item_color'])->where('size_id', $itemdata['item_size'])->decrement('quantity', $itemdata['item_quantity']);
                 }
                 Cookie::queue(Cookie::forget('shopping_cart'));
-
                 // Mail::to($request->email)->send(new InvoiceMail($order_id));
-
                 // return redirect()->route('order.success')->withSuccess("Order has been placed successfully")->withOrder($order_id);
                 return redirect()->route('order.success')->with([
                     'order_id'=>$order_id,
