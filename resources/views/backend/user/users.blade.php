@@ -54,12 +54,13 @@
                                         <td>{{$user->created_at->format('d M Y')}}</td>
                                         <td>{{$user->updated_at == null ? 'null' : $user->updated_at->format('d M Y')}}</td>
                                         <td>
-                                            <button type="button" value="{{$user->id}}" class="btn btn-info btn-sm edit-btn" data-toggle="modal" data-target="#modals-default"><i class="feather icon-edit"></i>&nbsp;Edit </button>
+                                            {{-- <button type="button" value="{{$user->id}}" class="btn btn-info btn-sm edit-btn" data-toggle="modal" data-target="#modals-default"><i class="feather icon-edit"></i>&nbsp;Edit </button> --}}
                                             
                                             <a href="{{route('user.delete', $user->id)}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
                                             
                                         </td>
                                     </tr>
+                                    
                                 @endforeach
                             </tbody>
                         </table>
@@ -100,7 +101,7 @@
                     <div class="form-group col">
                         <label class="form-label">Name</label>
                         <input type="text" name="user_name" id="name" class="form-control" placeholder="Enter your name">
-                        <input type="hidden" name="user_id" id="user_id" class="form-control" placeholder="Enter your name">
+                        <input type="hidden" name="user_id" id="user_id" class="form-control" placeholder="Enter your name" >
                         @error('user_name')
                             <span class="text-danger">{{$message}}</span>
                         @enderror

@@ -162,31 +162,34 @@ class UserController extends Controller
     }
 
     // user update
-    function user_update(Request $request) {
+    function user_update(Request $request) {;
         $request->validate([
             'user_name' => 'required',
             'user_email' => 'required',
         ]);
-        // print_r($request->user_id);
+        print_r($request->all());
+        die();
         if($request->user_password != null) {
-            if($request->user_password == $request->user_password_confirmation) {
-                User::where('id', $request->user_id)->update([
-                    'name' => $request->user_name,
-                    'email' => $request->user_email,
-                    'password' => bcrypt($request->user_password),
-                    'updated_at' => Carbon::now(),
-                ]);
-                return back()->withSuccess('User updated successfully');
-            } else{
-                return back()->withUserpassworderror('Password credentials do not matched');
-            }
+            // if($request->user_password == $request->user_password_confirmation) {
+            //     User::where('id', $request->user_id)->update([
+            //         'name' => $request->user_name,
+            //         'email' => $request->user_email,
+            //         'password' => bcrypt($request->user_password),
+            //         'updated_at' => Carbon::now(),
+            //     ]);
+            //     return back()->withSuccess('User updated successfully');
+            // } else{
+            //     return back()->withUserpassworderror('Password credentials do not matched');
+            // }
+            print_r($request->all());
         } else {
-            User::where('id', $request->user_id)->update([
-                'name' => $request->user_name,
-                'email' => $request->user_email,
-                'updated_at' => Carbon::now(),
-            ]);
-            return back()->withSuccess('User updated successfully');
+            // User::where('id', $request->user_id)->update([
+            //     'name' => $request->user_name,
+            //     'email' => $request->user_email,
+            //     'updated_at' => Carbon::now(),
+            // ]);
+            // return back()->withSuccess('User updated successfully');
+            print_r($request->all());
         }
     }
 }

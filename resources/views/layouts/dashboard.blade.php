@@ -6,7 +6,7 @@
 
 <!-- Mirrored from html.phoenixcoded.net/empire/bootstrap/default/dashboards_ecommerce.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 May 2023 13:28:16 GMT -->
 <head>
-    <title>Empire | B4+ admin template</title>
+    <title>Nugortech | admin dashboard</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,7 +15,7 @@
     <meta name="description" content="Empire is one of the unique admin template built on top of Bootstrap 4 framework. It is easy to customize, flexible code styles, well tested, modern & responsive are the topmost key factors of Empire Dashboard Template" />
     <meta name="keywords" content="bootstrap admin template, dashboard template, backend panel, bootstrap 4, backend template, dashboard template, saas admin, CRM dashboard, eCommerce dashboard">
     <meta name="author" content="Codedthemes" />
-    <link rel="icon" type="image/x-icon" href="{{asset('backend/img/favicon.ico')}}">
+    <link rel="icon" type="image/x-icon" href="{{asset('backend/img/favicon.png')}}">
 
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
@@ -64,9 +64,9 @@
                 <!-- Brand demo (see assets/css/demo/demo.css) -->
                 <div class="app-brand demo">
                     <span class="app-brand-logo demo">
-                        <img src="{{asset('backend/img/logo.png')}}" alt="Brand Logo" class="img-fluid">
+                        <img width="60px" src="{{asset('backend/img/logo.png')}}" alt="Brand Logo" class="img-fluid">
                     </span>
-                    <a href="{{route('site')}}" target="_" class="app-brand-text demo sidenav-text font-weight-normal ml-2">Empire</a>
+                    <a href="{{route('site')}}" target="_" class="app-brand-text demo sidenav-text font-weight-normal ml-2">Nugortechit</a>
                     <a href="javascript:" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
                         <i class="ion ion-md-menu align-middle"></i>
                     </a>
@@ -299,7 +299,7 @@
                     </li>
                     <li class="sidenav-item {{ Request::is('terms*') ? 'active open' : '' }}">
                         <a href="javascript:" class="sidenav-link sidenav-toggle">
-                            <i class="sidenav-icon feather icon-users"></i>
+                            <i class="sidenav-icon lnr lnr-license"></i>
                             <div>Terms & Policy</div>
                         </a>
                         <ul class="sidenav-menu {{ Request::is('terms/policy') ? 'active' : '' }}">
