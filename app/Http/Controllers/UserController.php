@@ -74,6 +74,17 @@ class UserController extends Controller
                 'updated_at' => Carbon::now(),
             ]);
         }
+        if($request->mobile != null) {
+            User::find(Auth::id())->update([
+                'mobile' => $request->mobile,
+                'updated_at' => Carbon::now(),
+            ]);
+        } else {
+            User::find(Auth::id())->update([
+                'mobile' => null,
+                'updated_at' => Carbon::now(),
+            ]);
+        }
 
         if($request->address != null) {
             User::find(Auth::id())->update([

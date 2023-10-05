@@ -208,7 +208,7 @@
                     </li>
                     <li class="sidenav-item {{ Request::is('product*') ? 'active open' : '' }}">
                         <a href="javascript:" class="sidenav-link sidenav-toggle">
-                            <i class="sidenav-icon ion ion-md-basket"></i>
+                            <i class="sidenav-icon lnr lnr-coffee-cup"></i>
                             <div>Product</div>
                         </a>
                         <ul class="sidenav-menu {{ Request::is('product/add') ? 'active' : '' }}">
@@ -258,7 +258,7 @@
                     </li>
                     <li class="sidenav-item {{ Request::is('banner*') ? 'active open' : '' }}">
                         <a href="javascript:" class="sidenav-link sidenav-toggle">
-                            <i class="sidenav-icon lnr lnr-paperclip"></i>
+                            <i class="sidenav-icon lnr lnr-picture"></i>
                             <div>Banner</div>
                         </a>
                         <ul class="sidenav-menu {{ Request::is('banner/add') ? 'active' : '' }}">

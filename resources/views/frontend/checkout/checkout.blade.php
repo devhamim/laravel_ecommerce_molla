@@ -38,31 +38,31 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <label>Name *</label>
-                                    <input type="text" name="name" class="form-control" required="">
+                                    <input type="text" name="name" class="form-control" required="" value="{{ old('name') }}">
                                 </div><!-- End .col-sm-6 -->
                                 <div class="col-lg-6">
                                     <label>Email address *</label>
-                                    <input type="email" name="email" class="form-control" required="">
+                                    <input type="email" name="email" class="form-control" required="" value="{{ old('email') }}">
                                 </div><!-- End .col-sm-6 -->
                             </div><!-- End .row -->
 
                             <div class="row">
                                 <div class="col-lg-12">
                                     <label>Number *</label>
-                                    <input type="tel" name="mobile" class="form-control" required="">
+                                    <input type="tel" name="mobile" class="form-control" required="" value="{{ old('mobile') }}">
                                 </div><!-- End .col-sm-6 -->
                             </div><!-- End .row -->
                             <div class="row">
                                 <div class="col-lg-12">
                                     <label>Address *</label>
-                                    <input type="text" name="address" class="form-control" required="">
+                                    <input type="text" name="address" class="form-control" required="" value="{{ old('address') }}">
                                 </div><!-- End .col-sm-6 -->
                             </div><!-- End .row -->
                             
                             <div class="row">
                                 <div class="col-lg-12">
                                     <label>Order notes (optional)</label>
-                                <textarea class="form-control" name="notes" cols="30" rows="4" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
+                                <textarea class="form-control" name="notes" cols="30" rows="4" placeholder="Notes about your order, e.g. special notes for delivery">{{ old('notes') }}</textarea>
                                 </div><!-- End .col-sm-6 -->
                             </div><!-- End .row -->
 
